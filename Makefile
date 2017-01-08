@@ -1,9 +1,9 @@
-TARGET = pulse_rgb/pulse_rgb.ino
+TARGET ?= pulse_rgb
 PORT   = /dev/ttyACM0
 BOARD  = arduino:avr:uno
 
-check: $(TARGET)
+check: $(TARGET)/$(TARGET).ino
 	arduino --verbose --verify $?
 
-install: $(TARGET)
+install: $(TARGET)/$(TARGET).ino
 	arduino --upload $? --port $(PORT) --board $(BOARD)
