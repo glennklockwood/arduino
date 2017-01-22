@@ -1,6 +1,6 @@
 TARGET ?= pulse_rgb
-PORT   = /dev/ttyACM0
-BOARD  = arduino:avr:uno
+PORT   ?= /dev/ttyACM0
+BOARD  ?= arduino:avr:uno
 
 check: $(TARGET)/$(TARGET).ino
 	arduino --verbose --verify $?
